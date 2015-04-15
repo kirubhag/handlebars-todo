@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Handlebar JS | TODO</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
+</head>
+<body>
+<section class="freeze">
+
+    <!--add-task-wrap-->
+    <section class="add-task-wrap">
+
+        <!--add-task-header-->
+        <div class="add-task-header">
+            <h3 class="fl">New Task</h3>
+            <i class="fa fa-times fr cp btn-close"></i>
+        </div>
+        <div class="ui-wrap">
+            <span class="w20 fl">Title</span>
+            <input class="w70" type="text" id="task-title" placeholder="Task Title"/>
+        </div>
+        <div class="ui-wrap">
+            <span class="w20 fl">Content</span>
+            <textarea name="task-detail" id="task-detail" cols="30" rows="10" style="height: 50px;"
+                      placeholder="What you are going to do?"></textarea>
+        </div>
+        <div class="ui-wrap fr">
+            <strong class="btn btn-danger ml100">Cancel</strong>
+            <strong class="btn btn-info mr100">Add Task</strong>
+        </div>
+
+    </section>
+</section>
+<section class="main-wrap">
+
+    <!--header-->
+    <header class="w100">
+        <div class="logo w20 fl">
+            <strong>TO DO</strong>
+        </div>
+        <div class="heading w60 fl text-center">
+            <h2>Handlebar JS</h2>
+        </div>
+        <div class="developer w20 fl">
+            <p class="fr" style="padding-right: 50px;">Developed By <strong>GK</strong></p>
+        </div>
+    </header>
+    <div class="clrfix"></div>
+
+    <!--Menu bar-->
+    <section class="sec-wrap w100">
+
+        <section class="top-menu-wrap w100">
+            <div class="task-ctrls fl cp">
+                <i class="fa fa-square-o"></i>
+            </div>
+            <div class="task-ctrls fl cp">
+                <i class="fa fa-trash-o"></i>
+            </div>
+            <div id="task-status" class="task-ctrls fl cp" style="font-size: 12px;font-weight: bold;">
+                <span>Mark as Finished</span>
+            </div>
+        </section>
+
+        <section class="lmenu-wrap fl cp">
+            <div class="task-logo" style="padding: 0 20px;">
+                <h3>Task</h3>
+            </div>
+
+            <div class="lmenu">
+                <ul>
+                    <li><a href="javascript:;"><i class="fa fa-book"></i><span>Create</span></a></li>
+                    <li><a href="javascript:;" class="active"><i class="fa fa-bell-o"></i><span>Unfinished</span></a>
+                    </li>
+                    <li><a href="javascript:;"><i class="fa fa-bell-slash-o"></i><span>Finished</span></a></li>
+                    <li><a href="javascript:;"><i class="fa fa-check"></i><span>All</span></a></li>
+                    <li><a href="javascript:;"><i class="fa fa-trash"></i><span>Trash</span></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="blog-wrap">
+
+            <div class="clrfix"></div>
+
+            <section class="detailed-view">
+
+            </section>
+        </section>
+    </section>
+
+    <div class="clrfix"></div>
+    <section></section>
+</section>
+
+<footer class="w100 text-center">
+    <p><strong>Copy &copy; rights 2015 Let's the code to code.</strong></p>
+</footer>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/handlebars-v3.0.0.js"></script>
+
+<script id="my-blog" type="text/x-handlebars-template">
+    {{#iterate blogs}}
+    <article class="blog" data-taskid="{{id}}">
+        <div class="blog-ctrls fl">
+            <i class="fa fa-square-o"></i>
+        </div>
+        <div class="blog-title w30 fl">
+            <strong class="{{isFinished}}">{{title}}</strong>
+        </div>
+        <div class="blog-content-wrap">
+            <div class="cont">
+                <p class="{{isFinished}}">{{content}}</p>
+            </div>
+        </div>
+    </article>
+    <div class="clrfix"></div>
+    {{/iterate}}
+</script>
+
+<script id="ZRHBJS-Tag" type="text/x-handlebars-template">
+    <table width="60%" class="newtable">
+        <tbody>
+        <tr>
+            <th width="30%">{{actionLabel}}</th>
+            <th width="20%" align="center">{{tagNameLabel}}</th>
+        </tr>
+        {{#ZRHBJS_Tag_Iterate list}}
+        <tr id="tag_list_{{tagId}}">
+            <td nowrap="">
+                <a href="javascript:void(0);" onclick="ZRSetupUtil.editTag({{tagId}}, {{tagName}})">Edit</a> | <a
+                    href="javascript:void(0);" onclick="ZRSetupUtil.removeTag({{tagId}}, {{tagName}})">Delete</a>
+            </td>
+            <td align="center" id="tag_label_{{tagId}}">{{tagName}}</td>
+        </tr>
+        {{/ZRHBJS_Tag_Iterate}}
+        </tbody>
+    </table>
+</script>
+
+<script src="js/template/todo.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

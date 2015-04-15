@@ -1,0 +1,23 @@
+{
+  "result": {
+    "moduleId":"1000",
+    "moduleName":"Potentials",
+    "message": "yes",
+    "error": {
+      "errorCode":"404",
+      "error":"Page not found"
+    },
+    "tagList": [
+      {
+        "tagId": 1234,
+        "tagName": "kirubha G",
+        "encryptTagName": "kirubha x20 G"
+      },
+      {
+        "tagId": 1235,
+        "tagName": "Giri G",
+        "encryptTagName": "Giri x20 G"
+      }
+    ]
+  }
+}

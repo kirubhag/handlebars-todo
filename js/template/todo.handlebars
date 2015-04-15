@@ -1,0 +1,16 @@
+{{#iterate blogs}}
+    <article class="blog" data-taskid="{{id}}">
+        <div class="blog-ctrls fl">
+            <i class="fa fa-square-o"></i>
+        </div>
+        <div class="blog-title w30 fl">
+            <strong class="{{isFinished}}">{{title}}</strong>
+        </div>
+        <div class="blog-content-wrap">
+            <div class="cont">
+                <p class="{{isFinished}}">{{content}}</p>
+            </div>
+        </div>
+    </article>
+    <div class="clrfix"></div>
+{{/iterate}}

@@ -1,0 +1,7 @@
+{
+  "result": {
+    "success": "no",
+    "error": "yes",
+    "msg": "There is no tag available for the specified category"
+  }
+}
